@@ -1,11 +1,44 @@
+import org.graalvm.compiler.core.common.type.ArithmeticOpTable.BinaryOp.And;
+
+import sun.font.TrueTypeFont;
+
 /** Class that determines whether or not a year is a leap year.
- *  @author YOUR NAME HERE
+ *  @author LUJIE
  */
 public class LeapYear {
 
     /** Calls isLeapYear to print correct statement.
      *  @param  year to be analyzed
      */
+    private static boolean isLeapYear(int year){
+        boolean LeapYear = false;
+        if(year % 4 == 0)
+        {
+            if(year % 100 == 0)
+            {
+                if(year % 400 == 0)
+                {
+                    LeapYear = true; 
+                    return LeapYear;
+                }
+                else
+                {
+                    LeapYear = false;
+                    return LeapYear; 
+                }
+            }
+            else 
+            {
+                LeapYear = true; 
+                return LeapYear;
+            }
+        }
+        else 
+        {
+            LeapYear = false;
+            return LeapYear;
+        }
+    }
     private static void checkLeapYear(int year) {
         if (isLeapYear(year)) {
             System.out.printf("%d is a leap year.\n", year);
